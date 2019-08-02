@@ -151,6 +151,7 @@ if(@$_GET['act'] == '') {
                           <textarea name="penyebab" class="form-control" id="penyebab"></textarea>
                         </div>
                         <div class="form-group">
+                          <img id="pict" width="50" height="50">
                           <label class="control-label" for="gambar">Gambar</label>
                           <input type="file" name="gambar" class="form-control" id="gambar"> 
                         </div>
@@ -174,14 +175,14 @@ if(@$_GET['act'] == '') {
                 var dskrps = $(this).data('dskrps');//ambil berdasarkan apa yg dikirim dari link
                 // alert(dskrps);
                 var pnybb = $(this).data('pnybb');
-                var gmbr = $(this).data('gambar');
+                var gmbr = $(this).data('gmbr');
                 $("#modal-edit #kd_penyakit").val(kdpnykt);
                 $("#modal-edit #penyakit").val(pnykt);
                 $("#modal-edit #solusi").val(sls);
                 $("#modal-edit #pencegahan").val(pncghn);
                 $("#modal-edit #deskripsi").val(dskrps);
                 $("#modal-edit #penyebab").val(pnybb);
-                $("#modal-edit #pict").attr("src", "assets/img/"+gmbr);
+                $("#modal-edit #pict").attr("src", "../img/"+gmbr);
               })
 
               // $(document).ready(function(e) {
