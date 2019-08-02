@@ -129,7 +129,9 @@ if(@$_GET['act'] == '') { ?>
                                             <input type="checkbox" aria-label="Checkbox for following text input" name="gejalaPasien[<?php echo $no ?>]" id="gejalaPasien[<?php echo $no ?>]" value="<?php echo $row['kd_gejala'] ?>">
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Text input with checkbox" disabled value="<?php echo $no.". ".$row['gejala'] ?>">
+                                    <span class="form-control" style="background: #e9ecef;">
+                                        <?php echo $no.". ".$row['gejala'] ?>
+                                    </span>
                                 </div>
                                 <?php
                                 $no++;
