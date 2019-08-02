@@ -49,14 +49,9 @@
                     3. Jika sudah memasukkan data anak, klik mulai diagnosa<br>
                     4. Pilih gejala yang sesuai dengan kondisi anak, ceklis jika anak mengalami gejala tersebut dan tidak diceklis jika tidak mengalami gejala tersebut<br>
                     5. Jika sudah memilih, klik diagnosa pada tombol paling bawah<br>
-                    6. Kemudian akan muncul data anak dan gejala yang telah dipilih beserta hasil diagnosa<br>
-                    7. Hasil diagnosa dapat dicetak jika diperlukan untuk ke rumah sakit atau klinik<br>
-                    8. Jika hasil diagnosa ke close maka user dapat membuka kembali dengan memasukkan ID Pasien yang didapatkan setelah register pasien<br>
+                    6. Kemudian akan muncul data anak dan gejala yang telah dipilih beserta hasil diagnosa, solusi, dan cara pencegahan<br>
+                    7. Hasil diagnosa dapat disimpan dalam format document dan dapat dicetak jika diperlukan untuk ke rumah sakit atau klinik<br>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
             </div>
         </div>
     </div>

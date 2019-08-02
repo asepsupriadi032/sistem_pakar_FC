@@ -82,19 +82,19 @@ include 'header.php';
                     <h1 style="margin-bottom:50px;"><center><strong>Kritik dan Saran</strong></center></h1>
                     <form method="post" enctype="multipart/form-data" action="">
                         <div class="form-group">
-                            <label> Nama :</label>
+                            <label><i class="fa fa-user"> Nama :</i></label>
                             <input type="text" class="form-control" name="nama" value="">
                         </div>
                         <div class="form-group">
-                            <label> Email :</label>
+                            <label><i class="fa fa-envelope"> Email :</i></label>
                             <input type="text" class="form-control" name="email" value="">
                         </div>
                         <div class="form-group">
                             <label><i class="fa fa-phone"> No. Handphone :</i></label>
-                            <input type="text" class="form-control" name="no_handphone" value="">
+                            <input type="integer" class="form-control" name="no_handphone" value="">
                         </div>
                         <div class="form-group">
-                            <label>Kritik dan Saran :</label>
+                            <label><i class="fa fa-sticky-note"> Kritik dan Saran :</i></label>
                             
                             <input type="hidden" name="redirect_to" value="index.php" id="">
                             <textarea class="form-control" name="pesan" rows="5"> </textarea> 

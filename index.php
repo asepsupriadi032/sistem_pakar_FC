@@ -32,7 +32,12 @@ session_destroy();
     <link href="css/style.css" rel="stylesheet">
     
 </head>
-
+<style>
+.modal-dialog {
+    max-width: 70% !important;
+    margin: 1.75rem auto !important;
+}
+</style>
 <body id="body">
 
 <?php
@@ -61,9 +66,6 @@ include 'header.php';
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <main id="main">
-        <!--=========================
-            INFO best seller
-        =============================-->
         <section id="info" class="info-bestseller">
             <div class="container">
                 <div class="section-header">
@@ -74,7 +76,7 @@ include 'header.php';
                         while($row=mysqli_fetch_array($sql)){
                    ?>
 
-                    <div class="card" style="width: 15rem;">
+                    <div class="card" style="width: 19rem;">
                         <img class="card-img-top" height="150px" src="img/<?php echo $row['gambar']; ?>" alt="<?php echo $row['penyakit']; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['penyakit']; ?></h5>
@@ -87,13 +89,14 @@ include 'header.php';
                     <?php } ?>
                 </div>
             </div>
-        </section><!-- # -->
+        </section>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <?php
             $sql= mysqli_query($conn, "SELECT * FROM tbl_penyakit ORDER BY penyakit ASC");
             while($row=mysqli_fetch_array($sql)){
                 
         ?>
+
         <div class="modal fade bd-example-modal-xl" id="<?php echo $row['penyakit']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
@@ -103,18 +106,17 @@ include 'header.php';
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-4"><?php echo $row['deskripsi']; ?></div>
-                        <div class="col-md-4"><?php echo $row['solusi']; ?></div>
-                        <div class="col-md-4"><?php echo $row['pencegahan']; ?></div>
-                    </div>
-                
+                    <h5 style = "color:#0039ff; font-weight:bold">Deskripsi Penyakit</h5>
+                    <?php echo $row['deskripsi']; ?>
+                    <hr>
+                    <h5 style = "color:#0039ff; font-weight:bold">Penyebab Penyakit</h5>
+                    <?php echo $row['penyebab']; ?>
+                    <hr>
+                    <h5 style = "color:#0039ff; font-weight:bold">Pencegahan Penyakit</h5>
+                    <?php echo $row['pencegahan']; ?>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
             </div>
         </div>
     </div> <?php } ?>
@@ -122,26 +124,6 @@ include 'header.php';
     <?php
     include 'footer.php'
     ?>
-   
-
-        <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> -->
-
-        <!-- JavaScript Libraries -->
-        <!-- <script src="lib/jquery/jquery.min.js"></script>
-        <script src="lib/jquery/jquery-migrate.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/superfish/hoverIntent.js"></script>
-        <script src="lib/superfish/superfish.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-        <script src="lib/sticky/sticky.js"></script> -->
-        <!-- Contact Form JavaScript File -->
-        <!-- <script src="contactform/contactform.js"></script> -->
-
-        <!-- Template Main Javascript File -->
-        <!-- <script src="js/main.js"></script> -->
 
 </body>
 </html>

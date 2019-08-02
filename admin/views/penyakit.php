@@ -45,7 +45,11 @@ if(@$_GET['act'] == '') {
                   <td><?php echo $data->deskripsi; ?></td>
                   <td><?php echo $data->penyebab; ?></td>
                     <td align="center">
-                      <img src="<?php echo "../img/".$data->gambar; ?>" width="70px" height="70px">
+                      <?php if(!empty($data->gambar)){?>
+                        <img src="<?php echo "../img/".$data->gambar; ?>" width="70px" height="70px">
+                      <?php }else {?>
+                        <img src="../img/no-image.jpg" width="70px" height="70px">
+                      <?php } ?>
                     </td>
                     <td align="center">
                       <a id="edit_pnykt" data-toggle="modal" data-target="#edit" data-kd="<?php echo $data->kd_penyakit; ?>" data-nama="<?php echo $data->penyakit; ?>" data-solusi="<?php echo $data->solusi; ?>" data-pencegahan="<?php echo $data->pencegahan; ?>" data-dskrps="<?= $data->deskripsi; ?>" data-pnybb="<?= $data->penyebab; ?>" data-gmbr="<?= $data->gambar; ?>">
@@ -108,44 +112,6 @@ if(@$_GET['act'] == '') {
                         <input type="submit" class="btn btn-success" name="submit" value="Simpan">
                       </div>
                     </form>
-                    <?php
-                    // if(@$_POST['tambah']) {
-                    //     $kd_penyakit = $connection->conn->real_escape_string($_POST['kd_penyakit']);
-                    //     $penyakit = $connection->conn->real_escape_string($_POST['penyakit']);
-                    //     $solusi = $connection->conn->real_escape_string($_POST['solusi']);
-                    //     $pencegahan = $connection->conn->real_escape_string($_POST['pencegahan']);
-                    //     $deskripsi = $connection->conn->real_escape_string($_POST['deskripsi']);
-                    //     $penyebab = $connection->conn->real_escape_string($_POST['penyebab']);
-
-                    //     // $extensi = explode(".", $_FILES['gambar']['name']);
-                    //     // $gambar = "gbr-".round(microtime(true)).".".end($extensi);
-                    //     // $sumber = $_FILES['gambar']['tmp_name'];
-                    //     // $upload = move_uploaded_file($sumber, "assets/img.".$gambar);
-                    //     $uploadDir = "../../img/";
-                    //     $uploadFile = $_FILES['gambar'];
-                    //     $file = phpinfo($uploadFile['name']);
-                      
-                    //     $sameName = 0;
-
-                    //     $handle = opendir($uploadDir);
-
-                    //     while(false !== ($files = readdir($handle))){
-                    //       if(strpos($files,$file['filename'])){
-                    //         $sameName++;
-                    //       }
-                    //     }
-
-                    //     $newName = empty($sameName)? $uploadFile['name']: $file['filename'].'('.$sameName.').'.$file['extention'];
-                    //     move_uploaded_file($uploadFile['name'],$uploadDir.$newName);
-                    //     echo "<script>alert(".$newName.");</script>";
-                    //     // if($upload){
-                    //     //   $pnykt->tambah($kd_penyakit,$penyakit,$solusi,$pencegahan,$deskripsi,$penyebab,$gambar);
-                    //     //   header("location: ?page=penyakit");
-                    //     // }else {
-                    //     //   echo"<script>alert('Data Gagal Ditambahkan!')</script>";
-                    //     // }
-                    //   }
-                    // ?>
                     </div>
                 </div>
               </div>
@@ -162,7 +128,7 @@ if(@$_GET['act'] == '') {
                         <div class="form-group">
                           <label class="control-label" for="kd_penyakit">Kode Penyakit</label>
                         <input type="hidden" name="redirect_to" value="<?=$_SERVER['REQUEST_URI'];?>" id="">
-                          <input type="text" name="kd_penyakit" class="form-control" id="kd_penyakit" required>
+                          <input type="text" name="kd_penyakit" class="form-control" id="kd_penyakit" readonly>
                         </div>
                         <div class="form-group">
                           <label class="control-label" for="penyakit">Nama Penyakit</label>
@@ -190,7 +156,7 @@ if(@$_GET['act'] == '') {
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="reset" class="btn btn-danger">Reset</button>
+                        <!-- <button type="reset" class="btn btn-danger">Reset</button> -->
                         <input type="submit" class="btn btn-success" name="submit" value="Ubah">
                       </div>
                     </form>

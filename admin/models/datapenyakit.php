@@ -22,6 +22,7 @@ class Penyakit {
         $db->query("INSERT INTO tbl_penyakit VALUES ('$kd_penyakit', '$penyakit', '$solusi', '$pencegahan', '$deskripsi', '$penyebab', '$gambar')") or die ($db->error);
     }
     public function edit($sql){
+        // var_dump($sql); die();
         $db = $this->mysqli->conn;
         $db->query($sql) or die ($db->error);
     }

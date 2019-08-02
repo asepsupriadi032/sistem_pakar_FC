@@ -103,7 +103,7 @@ if(@$_GET['act'] == '') {
                         <div class="form-group">
                           <label class="control-label" for="kd_gejala">Kode Gejala</label>
                           <input type="hidden" name='id_gejala' id="id_gejala">
-                          <input type="text" name="kd_gejala" class="form-control" id="kd_gejala" required>
+                          <input type="text" name="kd_gejala" class="form-control" id="kd_gejala" readonly>
                         </div>
                         <div class="form-group">
                           <label class="control-label" for="gejala">Gejala</label>

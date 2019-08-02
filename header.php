@@ -44,10 +44,10 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li><a href="index.php">Beranda</a></li>
+                    <li><a href="index.php#intro">Beranda</a></li>
                     <li><a href="index.php#info">Informasi</a></li>
                     <li><a href="diagnosa.php">Diagnosa</a></li>
-                    <li><a href="saran.php">Saran</a></li>
+                    <li><a href="saran.php#saran">Saran</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
 
