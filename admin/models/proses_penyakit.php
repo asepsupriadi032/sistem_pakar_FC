@@ -5,7 +5,7 @@ include "database.php";
 
 // die();
 try {
-    $connection = new Database("localhost", "root", "", "sistempakar");
+    $connection = new Database("localhost","id10524213_lailla","pakarbalita123","id10524213_sistempakar");
     
     // print_r($_POST['kd_penyakit']); exit();
     $pnykt = new Penyakit($connection);

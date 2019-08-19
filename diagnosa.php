@@ -7,8 +7,7 @@ if(@$_GET['act'] == '') { ?>
     <head>
         <meta charset="utf-8">
         <title>Diagnosa</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">        
         
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
@@ -38,27 +37,41 @@ if(@$_GET['act'] == '') { ?>
             border: 2px solid;
             margin-bottom: 20px;
             margin-top :75px;
-            color: #0d7913;
+            /* color: #0d7913; */
+            color: #8a1f04;
             padding-right: 20px;
             padding-left: 20px;
-            padding-bottom: 30px;
-            
+            padding-bottom: 30px;   
+            background-color: #cacaca;
+            opacity:0.8;
+            margin-right: 400px;
+            margin-left: 330px;
         }
+
+        .form-group{
+            font-family: Verdana;
+            font-size: 16px;
+        }
+        body{
+            background:url('img/heart.jpg');
+            background-size: cover;
+        }
+
         #btn{
             background-color: tomato;
             color:white;
         }
+
         #radio{
             margin: 10px;
         }
         
         .rataKanan{
             width:100%;
-            /* border:thin solid; */
             padding-right:10px;
             align:right;
         }
-        
+
         .pasien{
             border: thin solid #0d7913;
             width: 20%;
@@ -66,9 +79,23 @@ if(@$_GET['act'] == '') { ?>
             background-color: #75c298;
             color:#000000;
         }
+
+        .border1{
+            border: thin solid;
+        }
+        .costumRegister{
+            width:45%;
+            border: 2px solid;
+            margin-top :75px;
+            /* color: #0d7913; */
+            color: #8a1f04;  
+            background-color: #cacaca;
+            opacity:0.8;
+            padding:10px;
+        }
     </style>
     
-    <body id="body">
+    <body>
         <div id ="registrasi">
             <?php if(!empty($_SESSION['id_pasien'])){ ?>
                 <div class="rataKanan" align="right">
@@ -83,38 +110,47 @@ if(@$_GET['act'] == '') { ?>
                 </div>
                 <?php } ?>
                 <?php if(empty($_SESSION['id_pasien'])){ ?>
-                    <div class="container">
-                        <h1 style="margin-bottom:50px;"><center><strong>Registrasi Pasien</strong></center></h1>
-                        <form action="Proses_register.php" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label class="control-label" for="nama_anak"><i class="fa fa-child"> Nama Anak :</i></label>
-                                <input type="text" class="form-control" id="nama_anak" placeholder="Masukkan nama anak" name="nama_anak" >
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="control-label" for="usia_anak"><i class="fa fa-user-plus"></i> Usia Anak :</label>
-                                <input type="text" class="form-control" id="usia_anak" placeholder="Masukkan usia anak" name="usia_anak" >
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="jk_anak"><i class="fa fa-user"> Jenis Kelamin :</i></label><br>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label" for="radio1">
-                                        <input type="radio" class="form-check-input" id="radio" name="jk_anak" id="radio1" value="laki-laki" style="margin-right:5px">Laki-laki
-                                    </label><br>
-                                    <label class="form-check-label" for="radio2">
-                                        <input type="radio" class="form-check-input" id="radio" name="jk_anak" id="radio2" value="perempuan" style="margin-right:5px">Perempuan
-                                    </label>
+                    
+                     <form action="Proses_register.php" method="post" enctype="multipart/form-data">
+                        <div class='row'>
+                            <div class="col-md-12">
+                            <center>
+                            <div class="costumRegister">
+                                <h1 style="margin-bottom:50px;"><center><strong>Registrasi Pasien</strong></center></h1><div class="form-group text-justify">
+                                    <label class="control-label" for="nama_anak"><i class="fa fa-child"></i> Nama Anak*</label>
+                                    <input type="text" class="form-control" id="nama_anak" placeholder="Masukkan nama anak" name="nama_anak" required>
                                 </div>
+
+                                <div class="form-group text-justify">
+                                    <label class="control-label" for="usia_anak"><i class="fa fa-user-plus"></i> Usia Anak* </label>
+                                    <input type="text" class="form-control" id="usia_anak" placeholder="Masukkan usia anak" name="usia_anak" required>
+                                </div>
+                                
+                                <div class="form-group text-justify">
+                                    <label for="jk_anak"><i class="fa fa-user"></i> Jenis Kelamin</label><br>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label" for="radio1">
+                                            <input type="radio" class="form-check-input" id="radio" name="jk_anak" id="radio1" value="laki-laki" style="margin-right:5px">Laki-laki
+                                        </label><br>
+                                        <label class="form-check-label" for="radio2">
+                                            <input type="radio" class="form-check-input" id="radio" name="jk_anak" id="radio2" value="perempuan" style="margin-right:5px">Perempuan
+                                        </label>
+                                    </div>
+                                </div>
+                                <input type="submit" style="margin-top:2%"  class="btn btn-outline-primary" id="btn" name="submit" value="MULAI DIAGNOSA"></center>                         
                             </div>
-                            <center><input type="submit" style="margin-top:2%"  class="btn btn-outline-primary" id="btn" name="submit" value="MULAI DIAGNOSA"></center>
-                        </form>
-                    </div>
+                            </center>
+                            </div>
+                        </div>
+                    </form>
                     <?php
                 }else{
                     ?>
                     <form action="Proses_diagnosa.php" method="post">
-                        <div class="container">
+                        <div class='row'>
+                            <div class="col-md-12">
+                            <center>
+                            <div class="costumRegister">
                             <h1 style="margin-bottom:50px;"><center><strong>DAFTAR GEJALA</strong></center></h1>
                             <h4><center>Silahkan Pilih Gejala yang Sesuai dengan Kondisi Anak</center></h4>
                             <?php 
@@ -129,7 +165,7 @@ if(@$_GET['act'] == '') { ?>
                                             <input type="checkbox" aria-label="Checkbox for following text input" name="gejalaPasien[<?php echo $no ?>]" id="gejalaPasien[<?php echo $no ?>]" value="<?php echo $row['kd_gejala'] ?>">
                                         </div>
                                     </div>
-                                    <span class="form-control" style="background: #e9ecef;">
+                                    <span class="form-control text-justify" style="background: #e9ecef;">
                                         <?php echo $no.". ".$row['gejala'] ?>
                                     </span>
                                 </div>
@@ -138,8 +174,12 @@ if(@$_GET['act'] == '') { ?>
                             }
                             ?>
                             <input type="hidden" value="<?php echo $total ?>" name="total">
-                            <input type="submit" class="btn btn-primary" value="Diagnosa">
+                            <input type="submit" class="btn btn-primary" value="Diagnosa" >
                         </div>
+                    </div>
+                        </center>
+                        </div>
+                    </div>
                     </form>
                     <?php
                 }
@@ -162,7 +202,7 @@ if(@$_GET['act'] == '') { ?>
 } 
 
     ?>
-    <!-- JavaScript Libraries -->
+    <!-- JavaScript Libraries
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -173,8 +213,8 @@ if(@$_GET['act'] == '') { ?>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     
     <script src="lib/sticky/sticky.js"></script>
-    <!-- Contact Form JavaScript File -->
+    Contact Form JavaScript File
     <script src="contactform/contactform.js"></script>
     
-    <!-- Template Main Javascript File -->
+    Template Main Javascript File
     <script src="js/main.js"></script>

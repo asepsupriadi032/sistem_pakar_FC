@@ -37,7 +37,7 @@
         <div class="container">
 
             <div id="logo" class="pull-left">
-                <h1><a href="#body" class="scrollto">
+                <h1><a href="index.php#intro" class="scrollto">
                     SISTEM<span>PAKAR</span>
                 </a></h1>
             </div>
@@ -47,7 +47,7 @@
                     <li><a href="index.php#intro">Beranda</a></li>
                     <li><a href="index.php#info">Informasi</a></li>
                     <li><a href="diagnosa.php">Diagnosa</a></li>
-                    <li><a href="saran.php#saran">Saran</a></li>
+                    <li><a href="saran.php">Saran</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
 

@@ -13,7 +13,7 @@ include "admin/config/+koneksi.php";
 
         $sql=mysqli_query($conn, "INSERT INTO saran_user VALUES ('', '$nama', '$email', '$no_handphone', '$pesan')");
         
-            // echo "<script>alert('TERIMAKASIH');</script>";
+            //  echo "<script>alert('TERIMAKASIH');</script>";
             header("Location: index.php");
         // } else{
         //     header('Location: saran.php');
@@ -62,12 +62,27 @@ include 'header.php';
             border: 2px solid;
             margin-bottom: 20px;
             margin-top :20px;
-            color: #0d7913;
+            color: #8a1f04;
             padding-right: 20px;
             padding-left: 20px;
-            padding-bottom: 30px;
-            
+            padding-bottom: 30px;  
+            background-color: #cacaca;
+            opacity:0.8;
+            margin-right: 400px;
+            margin-left: 570px; 
         }
+
+        .form-group{
+            font-family: Verdana;
+            font-size: 16px;
+        }
+
+        body{
+            background:url('img/saran.jpg');
+            background-size: 900px;
+            background-repeat: no-repeat;
+        }
+
         #btn{
             background-color: tomato;
             color:white;
@@ -75,29 +90,29 @@ include 'header.php';
 
     </style>
 
-    <body id="body">
+    <body>
         <div id ="saran">
             <div class="col-sm-12 padding-right">
                 <div class="container">
                     <h1 style="margin-bottom:50px;"><center><strong>Kritik dan Saran</strong></center></h1>
                     <form method="post" enctype="multipart/form-data" action="">
                         <div class="form-group">
-                            <label><i class="fa fa-user"> Nama :</i></label>
-                            <input type="text" class="form-control" name="nama" value="">
+                            <label><i class="fa fa-user"></i> Nama*</label>
+                            <input type="text" class="form-control" name="nama" value="" required>
                         </div>
                         <div class="form-group">
-                            <label><i class="fa fa-envelope"> Email :</i></label>
-                            <input type="text" class="form-control" name="email" value="">
+                            <label><i class="fa fa-envelope"></i> Email*</label>
+                            <input type="text" class="form-control" name="email" value="" required>
                         </div>
                         <div class="form-group">
-                            <label><i class="fa fa-phone"> No. Handphone :</i></label>
+                            <label><i class="fa fa-phone"></i> No. Handphone</label>
                             <input type="integer" class="form-control" name="no_handphone" value="">
                         </div>
                         <div class="form-group">
-                            <label><i class="fa fa-sticky-note"> Kritik dan Saran :</i></label>
+                            <label><i class="fa fa-sticky-note"></i> Kritik dan Saran*</label>
                             
-                            <input type="hidden" name="redirect_to" value="index.php" id="">
-                            <textarea class="form-control" name="pesan" rows="5"> </textarea> 
+                            <input type="hidden" name="redirect_to" value="index.php" id="" required>
+                            <textarea class="form-control" name="pesan" rows="2"> </textarea> 
                         </div>
                         <br>
                     <center><input type="submit" style="margin-top:2%"  class="btn btn-outline-primary" id="btn" name="submit" value="KIRIM"></center>

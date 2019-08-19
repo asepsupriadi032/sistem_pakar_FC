@@ -8,13 +8,15 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background: #fff;
-  color: #444;
-  font-family: "Open Sans", sans-serif;
+    position:relative;
+    margin:auto;
+    color: rgb(0, 0, 0);
+    font-family: "Open Sans", sans-serif;
 }
 
+
 a {
-  color: #50d8af;
+  color: #8a1f04;
   transition: 0.5s;
 }
 
@@ -31,7 +33,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0 0 20px 0;
   padding: 0;
 }
@@ -40,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #50d8af;
+  background: #8a1f04;
   color: #fff;
   padding: 6px 12px 9px 12px;
   font-size: 16px;
@@ -63,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background: #0c2e8a;
+  background: #50d8af;
   color: #fff;
 }
 
@@ -130,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
 }
 
@@ -661,7 +663,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
 }
 #team .container{
   width: 1200x;

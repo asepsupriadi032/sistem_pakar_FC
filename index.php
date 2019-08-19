@@ -90,7 +90,7 @@ include 'header.php';
                 </div>
             </div>
         </section>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <?php
             $sql= mysqli_query($conn, "SELECT * FROM tbl_penyakit ORDER BY penyakit ASC");
             while($row=mysqli_fetch_array($sql)){

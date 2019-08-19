@@ -26,18 +26,18 @@ if(@$_GET['act'] == '') {
 
 </tbody>
 	<?php
-	$nomor=1;
+	$num=1;
 	$tampil = $srn->tampil();
 	while($data = $tampil->fetch_object()) {
 	?>
 		<tr>
-			<td align="center"><?php echo $nomor++."."; ?></td>
+			<td align="center"><?php echo $num++."."; ?></td>
 			<td><?= $data->nama; ?></td>
 			<td><?= $data->email; ?></td>
 			<td><?= $data->no_handphone; ?></td>
             <td><?= $data->pesan; ?></td>
             <td align="center">
-					<a href="?page=saran_user&act=del&id=<?php echo $data->no; ?> echo $data" onclick="return confirm('Yakin akan menghapus data ini?')">
+					<a href="?page=saran_user&act=del&nomor=<?php echo $data->no; ?> echo $data" onclick="return confirm('Yakin akan menghapus data ini?')">
 				<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> </button></a>
 			</td>
 		</tr>
@@ -49,6 +49,6 @@ if(@$_GET['act'] == '') {
 
 <?php
 } else if(@$_GET['act']=='del'){
-    $srn->hapus($_GET['no']);
+    $srn->hapus($_GET['nomor']);
     header("location: ?page=saran_user");
 }

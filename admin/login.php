@@ -1,7 +1,7 @@
 <?php
 session_start();
 //skrip koneksi
-$koneksi = new mysqli("localhost","root","","sistempakar");
+$koneksi = new mysqli("localhost","id10524213_lailla","pakarbalita123","id10524213_sistempakar");
 ?>
 <!DOCTYPE xhtml>
 <xhtml lang="en">

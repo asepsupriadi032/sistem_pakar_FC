@@ -7,9 +7,6 @@ if(@$_GET['act'] == '') {
         <div class="row">
           <div class="col-lg-12">
             <h1>Hasil Diagnosa</h1>
-            <!--<ol class="breadcrumb">
-              <li><a href="index.html"><i class="icon-dashboard"></i> GEJALA </a></li>
-            </ol>-->
           </div>
         </div>
        
@@ -36,7 +33,7 @@ if(@$_GET['act'] == '') {
                   <td align="center"><?php echo $no++."."; ?></td>
                   <!-- <td><?php //echo $data->id_pasien; ?></td> -->
                   <td><?php echo $data->nama_anak; ?></td>
-                  <td><?php echo $data->usia_anak; ?></td>
+                  <td><?php echo $data->usia_anak; ?> tahun</td>
                   <td><?php echo $data->jk_anak; ?></td>
                   <td align="center">
                     <!-- <a id="edit_hasil" data-toggle="modal" data-target="#edit" data-id="<?php //echo $data->id_pasien; ?>" data-nama="<?php //echo $data->nama_anak; ?>" data-usia="<?php //echo $data->usia_anak; ?>" data-jk="<?php //echo $data->jk_anak; ?>">
@@ -45,7 +42,7 @@ if(@$_GET['act'] == '') {
                     <a target="_blank" href="detail_diagnosa.php?id_pasien=<?php echo $data->id_pasien ?>">
                       <i class="fa fa-eye"></i>
                     </a>
-                    <a href="?page=hasil&act=del&id=<?php echo $data->kd_gejala; ?>" onclick="return confirm('Yakin akan menghapus data ini?')">
+                    <a href="?page=hasil&act=del&id=<?php echo $data->id_pasien; ?>" onclick="return confirm('Yakin akan menghapus data ini?')">
                       <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> </button>
                     </a>
                   </td>
@@ -55,48 +52,6 @@ if(@$_GET['act'] == '') {
                 </tbody>
               </table>
             </div>
-
-            
-
-            <!-- <div id="tambah" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Tambah Data Gejala</h4>
-                    </div>
-                    <form method="post" enctype="multipart/form-data">
-                      <div class="modal-body">
-                        <div class="form-group">
-                          <label class="control-label" for="kd_gejala">Kode Gejala</label>
-                          <input type="text" name="kd_gejala" class="form-control" id="kd_gejala" required>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label" for="gejala">Nama Gejala</label>
-                          <input type="text" name="gejala" class="form-control" id="gejala" required>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="reset" class="btn btn-danger">Reset</button>
-                        <input type="submit" class="btn btn-success" name="tambah" value="Simpan">
-                      </div>
-                    </form> -->
-                    <?php
-                    // if(@$_POST['tambah']) {
-                    //     $kd_gejala = $connection->conn->real_escape_string($_POST['kd_gejala']);
-                    //     $gejala = $connection->conn->real_escape_string($_POST['gejala']);
-
-                    //     if($gejala){
-                    //       $gjl->tambah($kd_gejala,$gejala);
-                    //       header("location: ?page=gejala");
-                    //     }else {
-                    //       echo"<script>alert('Data Gagal Ditambahkan!')</script>";
-                    //   }
-                    // }
-                    ?>
-                    <!-- </div>
-                  </div>
-              </div> -->
 
               <div id="edit" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -170,6 +125,6 @@ if(@$_GET['act'] == '') {
 
 <?php
 } elseif(@$_GET['act'] == "del") {
-  $gjl->hapus($_GET['kd']);
-  header("location: ?page=gejala");
+  $hsl->hapus($_GET['id']);
+  header("location: ?page=hasil");
 }

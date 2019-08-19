@@ -1,9 +1,8 @@
-
 <?php session_start(); 
 header("Content-Type: application/vnd.ms-word");
 header("Expires: 0");
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-header("content-disposition: attachment;filename=Reports.doc");
+header("content-disposition: attachment;filename=HasilDiagnosa.doc");
 include "admin/config/+koneksi.php"; ?>
 <!DOCTYPE html>
 <html lang="en">

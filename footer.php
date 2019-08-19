@@ -7,7 +7,7 @@
         padding: 10px;
         padding-left: 3px;
         margin-right: 5px;
-        border: 3px solid #50d8af;
+        border: 3px solid #8a1f04;
         z-index:999 !important;
     }
     
